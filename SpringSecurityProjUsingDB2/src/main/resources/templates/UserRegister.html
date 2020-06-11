@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+	crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="card">
+			<div class="card-header bg-primary text-white">
+				<h1>WELCOME TO USER REGISTRATION PAGE</h1>
+			</div>
+			<div class="card-body">
+				<form th:action="save" method="POST">
+					<div class="row">
+						<div class="col-3">
+							<label for="userName">USER NAME</label>
+						</div>
+						<div class="col-5">
+							<input type="text" name="userName" id="userName"
+								class="form-control" />
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-3">
+							<label for="userEmail">USER EMAIL</label>
+						</div>
+						<div class="col-5">
+							<input type="email" name="userEmail" class="form-control"
+								id="userEmail" />
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-3">
+							<label for="userPwd">USER PASSWORD</label>
+						</div>
+						<div class="col-5">
+							<input type="password" name="userPwd" class="form-control"
+								id="userPwd" />
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-3">
+							<label for="roles">USER ROLES</label>
+						</div>
+						<div class="col-5">
+							<input type="checkbox" name="roles" value="ADMIN">ADMIN 
+							<input type="checkbox" name="roles" value="MANAGER">MANAGER
+						</div>
+					</div>
+					<input type="submit" value="Register" class="btn btn-success">
+				</form>
+			</div>
+			<div class="card-footer bg-info text-white" >
+			<span th:text="${message}"></span>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
